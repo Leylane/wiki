@@ -6,7 +6,9 @@ For the moment, we're collecting documentation in the form of FAQs on the issue 
 
 You will need to create a Jira account, but you do not need special authorisation to see the documentation.
 
-Use the search box on the left-hand side of the screen to search for your keyword, or for the word "Documentation."  You can refine your search using the "issue type" box, just below the query box.  At "task" level, you will find the meta-level groupings of documentation types (Trust, Licensing, Metadata, etc), and the sub-tasks are the individual questions.
+Use the search box on the left-hand side of the screen to search for your keyword, or for the word "Documentation."  You can refine your search using the "issue type" box, just below the query box.  
+
+At "task" level, you will find the main groupings of documentation types (Trust, Licensing, Metadata, etc).  Sub-tasks are the individual questions.
 
 **Or, start here:**
 
