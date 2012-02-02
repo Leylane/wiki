@@ -1,3 +1,0 @@
-Welcome to the DataStage wiki.
-
-This will be the home of documentation for the project.
