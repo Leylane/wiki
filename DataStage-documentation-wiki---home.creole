@@ -16,7 +16,7 @@ At "task" level, you will find the main groupings of documentation types (Trust,
 
 **Licensing:** http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-166
 
-**Trust: **http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-121
+**Trust:** http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-121
 
 **Interoperability:** http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-116
 
