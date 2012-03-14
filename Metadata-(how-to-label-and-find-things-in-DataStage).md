@@ -1,6 +1,7 @@
 Metadata can mean different things to different users.  We mean "information about the file that you are working with."  Most computer programmes capture the filetype, filename, size, creator, date created and date modified, but DataStage also makes it easy to capture information relevant to the researcher (e.g. "control run," "use for Figure 2") and to others who want to make sense of the data ("captured using equipment X, protocol Y").
 
-**Automatically captured**:
+
+**Automatically captured**
 
 DataStage automatically captures the general file attributes:
 
@@ -24,11 +25,12 @@ The DataStage web interface can capture:
 * A description of the file (a free-text field): useful for further information, e.g. "reference dataset", "control - bad image quality", "file originally created by M Stefanos."
 
 
-**Notes**:
+**Notes**
 
 * When using DataStage as a mapped drive, users can only see the filename, not the Title or Description fields.
 
 * If users adopt standard nomenclature, they can can use the information in the "title" and "description" fields to filter results.
+
 
 **DataStage and repositories**
 
@@ -36,17 +38,15 @@ DataStage can package datasets for submission to any [SWORD-2](http://swordapp.o
 
 DataBank will automatically capture file system attributes from DataStage:
 
-    The "title" field from DataStage (the one you entered manually online), which will be called the "label" in DataBank.
-    The filename(s) and "description" fields from DataStage do not appear in the metadata for DataBank, but this information is kept as "extended file attributes" within the zipped data package, which you can access via the "manifest" link in DataBank
-    The name of the research group, as used by DataStage
+* The "title" field from DataStage (the one you entered manually online), which will be called the "label" in DataBank.
+* The filename(s) and "description" fields from DataStage do not appear in the metadata for DataBank, but this information is kept as "extended file attributes" within the zipped data package, which you can access via the "manifest" link in DataBank
+* The name of the research group, as used by DataStage
 
 DataBank also assigns:
+* Created date (a timestamp given by the DataBank server, not the date the data was created)
 
-    Created date (a timestamp given by the DataBank server, not the date the data was created)
-
-You specify:
-
-    An ID which is a unique identifier: if you try to use an ID which has already been taken, DataBank will require you to rename it, or to accept it as another "version" of the same data package. The user can decide which of these is the correct action in each case. The closer this ID is to real words, the more useful it will be to anyone searching the archive.
+Users can specify:
+* An ID which is a unique identifier: if users attempt to use an ID which has already been taken, DataBank will require them to rename the data package, or to accept it as another "version" of the same data package. The user can decide which of these is the correct action in each case. The closer this ID is to real words, the more useful it will be to anyone searching the archive.
 
     Description (the description field you entered in DataStage is kept inside the .zip file with its related files. You need to add a new description for the data package as a whole).
 
