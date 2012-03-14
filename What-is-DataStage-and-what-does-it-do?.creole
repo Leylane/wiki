@@ -12,7 +12,7 @@ Whatever your field (Chemistry, Computer Science, Mongolian Studies, Fine Art...
 
 **Working with DataStage**
 
-By default, DataStage instances have three areas, with access controlled by credentials assigned by an administrator:
+By default, DataStage has three "areas" for files, with access controlled by credentials assigned by an administrator:
 * Private: files are only visible to their owner, and the administrator(s)
 * Shared: files are visible to all group members, with read-only access
 * Collaborative: files are visible to all group members, with read- and write-access
