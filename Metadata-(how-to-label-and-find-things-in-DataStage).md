@@ -1,6 +1,8 @@
 Metadata can mean different things to different users.  We mean "information about the file that you are working with."  Most computer programmes capture the filetype, filename, size, creator, date created and date modified, but DataStage also makes it easy to capture information relevant to the researcher (e.g. "control run," "use for Figure 2") and to others who want to make sense of the data ("captured using equipment X, protocol Y").
 
-**When you add a file to DataStage, DataStage automatically captures the general file attributes**:
+**Automatically captured**:
+
+DataStage automatically captures the general file attributes:
 
 * Created (when the file was first uploaded to the server, not necessarily when the data file itself was created)
 * Filename (i.e. what you called the file itself)
@@ -9,6 +11,9 @@ Metadata can mean different things to different users.  We mean "information abo
 * Owner (user account in DataStage.  If "author" or other metadata is captured by the programme that created the file in the first place, this will not be kept in DataStage. "Ownership" of the file will be granted to whoever uploaded it into DataStage.)
 * Location (filepath to location on server)
 * Size
+
+
+**Optional extra metadata**
 
 The web interface also captures "extended attributes." These are not in [RDF](http://en.wikipedia.org/wiki/Resource_Description_Framework)format, so are not machine-readable (e.g. they cannot be indexed by web crawlers). However, users can see this metadata from the "index" screen in the DataStage web interface.
 
