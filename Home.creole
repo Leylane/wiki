@@ -1,4 +1,4 @@
-Welcome to the DataStage documentation wiki.
+**Welcome to the DataStage documentation wiki.**
 
 This will be the home of documentation for the project.  We haven't put it here yet, though!
 
