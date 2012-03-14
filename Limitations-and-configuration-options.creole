@@ -1,0 +1,23 @@
+There are very few inherent limits to the DataStage system, other than the physical capacity of the hardware running it. The DataStage administrator may wish to create file size limits for individual users, or for the total instance, but it is not required.
+
+The administrator can set:
+* an upper limit for filesize
+* permissions for users (e.g. access to "shared" and "collaborative" areas of DataStage)
+* target repository for files that users wish to keep in the long term (e.g. [[http://www.dataflow.ox.ac.uk/index.php/databank/db-about|DataBank]])
+
+There may also be firewall considerations – these may work in favour of your group (additional security preventing unauthorised access) or against you (preventing access by people outside your institution, when you would like to make a file publicly accessible).
+
+Note: the name of the silo cannot be changed. Ideally, silo names should be related to the research topic, rather than linked to an individual's name (e.g. "Image Bioinformatics Research Group", rather than "Shotton Research Group".)
+
+
+**Long-term storage**
+
+The cost of long-term storage depends on how you approach the question. The DataBank software is free, but you will need to arrange access to the hardware, either by buying a server, access to an institutional data centre, or cloud hosting from an external provider like Eduserv or Amazon. At the University of Oxford, using in-house hardware, the Library Services department estimates that it can provide indefinite storage of data for about £5,000 per terabyte (note: this figure is based on a raft of assumptions, and may not be relevant for your DataBank instance).
+
+We cannot guarantee to preserve your data. We provide software which is as robust as we can make it, but we cannot take responsibility for the hardware you install it on, or how you configure it.
+
+Software development will carry on after the end of the DataFlow project in May 2012. The Bodleian Library at the University of Oxford has decided to adopt DataBank for its own use, and will continue open-source development practices, so users can expect security patches and bug fixes in the future.
+
+However – no matter what may happen to the DataBank software itself, so long as you have root access to the machine holding your data, you can always get your files back. So long as you maintain that machine, your data will be on it.
+
+
