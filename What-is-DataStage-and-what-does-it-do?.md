@@ -1,0 +1,31 @@
+DataStage is a central filestore with three added benefits:
+1. Security controls that allow researchers to have a "private" area only accessible to themselves and the group leader, and "shared" and "collaborative" areas to put files of use to the whole research group.
+2. Web interface allowing users to annotate their files, and access data from outside their "home" computer. 
+3. The option to send data to a repository for permanent storage.
+
+A likely scenario is that each research group (or project) would have its own instance of DataStage, for internal use. The best of this data would be sent to a repository (like [DataBank](http://www.dataflow.ox.ac.uk/index.php/databank/db-about)) for permanent archival/publication.
+
+DataStage has been pared down to the bare essentials, to be as unobtrusive as possible. There is no "client" software to download, very few required metadata fields, and a file system that builds on formats the user should already be familiar with. End-users can connect to DataStage as a mapped drive on Mac, Linux or Windows machines, and DataStage is also accessible via a web interface (the web interface includes extra annotation/metadata features and the option to submit a data package to DataBank).
+
+Whatever your field (Chemistry, Computer Science, Mongolian Studies, Fine Art...), DataStage should let you store, find and retreive your data without getting in your way.
+
+
+**Working with DataStage**
+
+By default, DataStage instances have three areas, with access controlled by credentials assigned by an administrator:
+* Private: files are only visible to their owner, and the administrator(s)
+* Shared: files are visible to all group members, with read-only access
+* Collaborative: files are visible to all group members, with read- and write-access
+
+The administrator could give outside collaborators only a subset of access permissions, e.g. access to "collaborative" files only.
+
+Users can connect to DataStage as a **mapped drive** (analagous to the C:\ drive on their local computer, but held on an external storage system accessible to all group members).  They can also upload, download, and annotate files using the** web interface**.
+
+
+**What services are available for prospective users?**
+
+At present, the [DataFlow project](http://www.dataflow.ox.ac.uk) is developing software, with no immediate plans to offer a service based on the software. Users are free to install, configure, and further develop the software as they wish, on their own hardware or on commercially provided cloud resources.
+
+We cannot guarantee to preserve your data. We provide software which is as robust as we can make it, but we cannot take responsibility for the hardware you install it on, or how you configure it.
+
+However – no matter what may happen to the DataStage software itself, so long as you have root access to the machine holding your data, you can always get your files back. So long as you maintain that machine, your data will be on it.
