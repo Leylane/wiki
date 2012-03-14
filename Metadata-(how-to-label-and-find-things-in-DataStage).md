@@ -1,16 +1,16 @@
 Metadata can mean different things to different users.  We mean "information about the file that you are working with."  Most computer programmes capture the filetype, filename, size, creator, date created and date modified, but DataStage also makes it easy to capture information relevant to the researcher (e.g. "control run," "use for Figure 2") and to others who want to make sense of the data ("captured using equipment X, protocol Y").
 
 
-**Automatically captured**
+**Automatically-captured metadata**
 
 DataStage automatically captures the general file attributes:
 
-* Created (when the file was first uploaded to the server, not necessarily when the data file itself was created)
-* Filename (i.e. what you called the file itself)
-* Last modified (the timestamp given by the computer from which the file is being read. DataStage will take the timestamp of your local computer the first time you upload the file, but if you work with the file directly from the DataStage mapped drive and save it in the same location, the timestamp will come from the DataStage server)
-* Type (options are "file" or "folder." This is assigned by the DataStage server)
-* Owner (user account in DataStage.  If "author" or other metadata is captured by the programme that created the file in the first place, this will not be kept in DataStage. "Ownership" of the file will be granted to whoever uploaded it into DataStage.)
-* Location (filepath to location on server)
+* Created: when the file was first uploaded to the server, not necessarily when the data file itself was created.
+* Filename: the name of the file itself.
+* Last modified: the timestamp given by the computer from which the file is being read. DataStage will take the timestamp of the user's computer the first time the file is uploaded, but if users work with the file directly from the DataStage mapped drive and save it in the same location, the timestamp will come from the DataStage server.
+* Type: "file" or "folder", assigned automatically by the DataStage server.
+* Owner: user account in DataStage.  If "author" or other metadata is captured by the programme that created the file in the first place, this will not be kept in DataStage. "Ownership" of the file will be granted to whoever uploaded it into DataStage.
+* Location: filepath to location on server
 * Size
 
 
