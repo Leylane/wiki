@@ -1,4 +1,4 @@
-Metadata can mean different things to different users.  For the purposes of DataStage documentation, we mean "information about the file that you are working with."  This includes the filetype, filename, size, creator, date created and date modified (captured by most programmes), but DataStage also makes it easy to capture information relevant to the researcher (e.g. "control run," "use for Figure 2") and to others who want to make sense of the data ("captured using equipment X, protocol Y").
+Metadata can mean different things to different users.  We mean "information about the file that you are working with."  Most computer programmes capture the filetype, filename, size, creator, date created and date modified, but DataStage also makes it easy to capture information relevant to the researcher (e.g. "control run," "use for Figure 2") and to others who want to make sense of the data ("captured using equipment X, protocol Y").
 
 When you add a file to DataStage, DataStage automatically captures the general file attributes:
 
