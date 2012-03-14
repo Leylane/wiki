@@ -33,7 +33,7 @@ The DataStage web interface can capture:
 
 
 
-**DataStage and repositories**
+### DataStage and repositories
 
 DataStage can package datasets for submission to any [SWORD-2](http://swordapp.org/sword-v2/)-compliant repository (e.g. [DataBank](http://www.dataflow.ox.ac.uk/index.php/databank/db-about)).  When you decide to submit a data package to a repository, the metadata profile changes.
 
