@@ -1,7 +1,7 @@
 DataStage is a central filestore with three added benefits:
-* Security controls that allow researchers to have a "private" area only accessible to themselves and the group leader, and "shared" and "collaborative" areas to put files of use to the whole research group.
-* Web interface allowing users to annotate their files, and access data from outside their "home" computer. 
-* The option to send data to a repository for permanent storage.
+# Security controls that allow researchers to have a "private" area only accessible to themselves and the group leader, and "shared" and "collaborative" areas to put files of use to the whole research group.
+# Web interface allowing users to annotate their files, and access data from outside their "home" computer. 
+# The option to send data to a repository for permanent storage.
 
 A likely scenario is that each research group (or project) would have its own instance of DataStage, for internal use. The best of this data would be sent to a repository (like [DataBank](http://www.dataflow.ox.ac.uk/index.php/databank/db-about)) for permanent archival/publication.
 
