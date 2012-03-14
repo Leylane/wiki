@@ -12,6 +12,6 @@ There may also be firewall considerations – these may work in favour of your g
 
 We cannot guarantee to preserve your data. We provide software which is as robust as we can make it, but we cannot take responsibility for the hardware you install it on, or how you configure it.
 
-Software development will carry on after the end of the [[http://www.dataflow.ox.ac.uk|DataFlow project]] in May 2012. The Bodleian Library at the University of Oxford has decided to adopt DataBank for its own use, and will continue open-source development practices, so users can expect security patches and bug fixes in the future.
+Software development will carry on after the end of the DataFlow project (www.dataflow.ox.ac.uk) in May 2012. The Bodleian Library at the University of Oxford has decided to adopt DataBank for its own use, and will continue open-source development practices, so users can expect security patches and bug fixes in the future.
 
 However – no matter what may happen to the DataBank software itself, so long as you have root access to the machine holding your data, you can always get your files back. So long as you maintain that machine, your data will be on it.
