@@ -17,7 +17,7 @@ DataStage automatically captures the general file attributes:
 
 The web interface also captures "extended attributes." These are not in [RDF](http://en.wikipedia.org/wiki/Resource_Description_Framework)format, so are not machine-readable (e.g. they cannot be indexed by web crawlers). However, users can see this metadata from the "index" screen in the DataStage web interface.
 
-**The DataStage web interface can capture**:
+The DataStage web interface can capture:
 
 * The title of the file (a free-text field): this is not the same as the filename, and can be used to add more information.  For example, Filename = Xcf23.11.doc but Title = crysallography data 23 Nov
 
