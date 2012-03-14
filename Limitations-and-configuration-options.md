@@ -1,8 +1,8 @@
 There are very few inherent limits to the DataStage system, other than the physical capacity of the hardware running it. The DataStage administrator may wish to create file size limits for individual users, or for the total instance, but it is not required.
 
 The administrator can set:
-* an upper limit for filesize
-* permissions for users (e.g. access to "shared" and "collaborative" areas of DataStage)
+* an upper limit for filesize 
+* permissions for users (e.g. access to "shared" and "collaborative" areas of DataStage) 
 * target repository for files that users wish to keep in the long term (e.g. [DataBank](http://www.dataflow.ox.ac.uk/index.php/databank/db-about))
 
 There may also be firewall considerations – these may work in favour of your group (additional security preventing unauthorised access) or against you (preventing access by people outside your institution, when you would like to make a file publicly accessible).
