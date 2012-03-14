@@ -3,7 +3,7 @@ DataStage is a central filestore with three added benefits:
 # Web interface allowing users to annotate their files, and access data from outside their "home" computer. 
 # The option to send data to a repository for permanent storage.
 
-A likely scenario is that each research group (or project) would have its own instance of DataStage, for internal use. The best of this data would be sent to a repository (like [DataBank](http://www.dataflow.ox.ac.uk/index.php/databank/db-about)) for permanent archival/publication.
+A likely scenario is that each research group (or project) would have its own instance of DataStage, for internal use. The best of this data would be sent to a repository (like DataBank (http://www.dataflow.ox.ac.uk/index.php/databank/db-about)) for permanent archival/publication.
 
 DataStage has been pared down to the bare essentials, to be as unobtrusive as possible. There is no "client" software to download, very few required metadata fields, and a file system that builds on formats the user should already be familiar with. End-users can connect to DataStage as a mapped drive on Mac, Linux or Windows machines, and DataStage is also accessible via a web interface (the web interface includes extra annotation/metadata features and the option to submit a data package to DataBank).
 
@@ -24,7 +24,7 @@ Users can connect to DataStage as a **mapped drive** (analagous to the C:\ drive
 
 **What services are available for prospective users?**
 
-At present, the [DataFlow project](http://www.dataflow.ox.ac.uk) is developing software, with no immediate plans to offer a service based on the software. Users are free to install, configure, and further develop the software as they wish, on their own hardware or on commercially provided cloud resources.
+At present, the DataFlow project (http://www.dataflow.ox.ac.uk) is developing software, with no immediate plans to offer a service based on the software. Users are free to install, configure, and further develop the software as they wish, on their own hardware or on commercially provided cloud resources.
 
 We cannot guarantee to preserve your data. We provide software which is as robust as we can make it, but we cannot take responsibility for the hardware you install it on, or how you configure it.
 
