@@ -4,28 +4,30 @@ Metadata can mean different things to different users.  We mean "information abo
 
 * Created (when the file was first uploaded to the server, not necessarily when the data file itself was created)
 * Filename (i.e. what you called the file itself)
-* Last modified (the timestamp given by the computer from which the file is being read. It will take the timestamp of your local computer the first time you upload the file, but if you work with the file directly from the DataStage mapped drive and save it in the same location, the timestamp will come from the DataStage server)
+* Last modified (the timestamp given by the computer from which the file is being read. DataStage will take the timestamp of your local computer the first time you upload the file, but if you work with the file directly from the DataStage mapped drive and save it in the same location, the timestamp will come from the DataStage server)
 * Type (options are "file" or "folder." This is assigned by the DataStage server)
-* Owner (automatic, according to the user account on DataStage)
+* Owner (user account in DataStage.  If "author" or other metadata is captured by the programme that created the file in the first place, this will not be kept in DataStage. "Ownership" of the file will be granted to whoever uploaded it into DataStage.)
 * Location (filepath to location on server)
 * Size
 
-Note: if Author or other metadata is captured by the programme that created the file in the first place, this will not be kept in DataStage. "Ownership" of the file will be granted to whoever uploaded it into DataStage.
+The web interface also captures "extended attributes." These are not in [RDF](http://en.wikipedia.org/wiki/Resource_Description_Framework)format, so are not machine-readable (e.g. they cannot be indexed by web crawlers). However, users can see this metadata from the "index" screen in the DataStage web interface.
 
-The web interface also captures "extended attributes." These are not in RDF, so are not machine-readable. However, you can browse these from the "index" screen in the DataStage web interface.
+**The DataStage web interface can capture**:
 
-We can capture:
+* The title of the file (a free-text field): this is not the same as the filename, and can be used to add more information.  For example, Filename = Xcf23.11.doc but Title = crysallography data 23 Nov
 
-    the title of the dataset (an additional field you populate manually – this is not the same as the filename, and can be used to add more info, e.g. Filename = Xcf23.11.doc but Title = crysallography data 23 Nov)
-    the "description" field, a free-text box which you can use to give further information, e.g. "reference dataset" or "control - bad image quality."
+* A description of the file (a free-text field): useful for further information, e.g. "reference dataset", "control - bad image quality", "file originally created by M Stefanos."
 
-Notes:
 
-    If you are using DataStage as a mapped drive, you can only see the filename, not the Title or Description fields.
+**Notes**:
 
-    If you use standard nomenclature, you can use the information in "title" and "description" to filter results.
+* When using DataStage as a mapped drive, users can only see the filename, not the Title or Description fields.
 
-When you decide to submit a data package to DataBank, the metadata profile changes.
+* If users adopt standard nomenclature, they can can use the information in the "title" and "description" fields to filter results.
+
+**DataStage and repositories**
+
+DataStage can package datasets for submission to any [SWORD-2](http://swordapp.org/sword-v2/)-compliant repository (e.g. [DataBank](http://www.dataflow.ox.ac.uk/index.php/databank/db-about)).  When you decide to submit a data package to a repository, the metadata profile changes.
 
 DataBank will automatically capture file system attributes from DataStage:
 
