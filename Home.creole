@@ -1,14 +1,13 @@
 **Welcome to the DataStage documentation wiki.**
 
-This will be the home of documentation for the project.  We haven't put it here yet, though!
+This will be the home of documentation for the project. You can see a list of content by clicking the "pages" link above.  These pages will be updated and expanded as the software evolves.
 
-For the moment, we're collecting documentation in the form of FAQs on the issue tracker: http://dataflow-jira.bodleian.ox.ac.uk/jira/secure/IssueNavigator.jspa.
+If you don't see what you want here, you may find answers on our issue tracker: http://dataflow-jira.bodleian.ox.ac.uk/jira/secure/IssueNavigator.jspa.
 
 You will need to create a Jira account, but you do not need special authorisation to see the documentation.
 
-Use the search box on the left-hand side of the screen to search for your keyword, or for the word "Documentation."  You can refine your search using the "issue type" box, just below the query box.  
+Use the search box on the left-hand side of the screen to search for your keyword, or for the word "Documentation," and refine your search as needed using the options on the left-hand side of the screen.  
 
-At "task" level, you will find the main groupings of documentation types (Trust, Licensing, Metadata, etc).  Sub-tasks are the individual questions.
 
 **Or, start here:**
 
