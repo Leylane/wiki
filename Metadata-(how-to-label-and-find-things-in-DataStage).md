@@ -42,8 +42,8 @@ DataStage can package datasets for submission to any [SWORD-2](http://swordapp.o
 DataBank (and many other repositories) will automatically capture file system attributes from DataStage:
 
 * The "title" field from DataStage (the one entered manually online), which will be called the "label" in DataBank.
-* The filename(s) and "description" fields from DataStage do not appear in the metadata for DataBank, but this information is kept as "extended file attributes" within the zipped data package, which users can access via the "manifest.rdf" file in DataBank
-* The name of the research group, as used by DataStage
+* The filename(s) and "description" fields from DataStage do not appear in the metadata for DataBank, but this information is kept as "extended file attributes" within the zipped data package, which users can access via the "manifest.rdf" file in DataBank.
+* The name of the research group, as used by DataStage.
 
 DataBank also assigns:
 * Created date (a timestamp given by the DataBank server, not the date the data was created)
