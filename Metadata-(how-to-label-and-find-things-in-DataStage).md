@@ -42,15 +42,15 @@ DataStage can package datasets for submission to any [SWORD-2](http://swordapp.o
 DataBank (and many other repositories) will automatically capture file system attributes from DataStage:
 
 * The "title" field from DataStage (the one entered manually online), which will be called the "label" in DataBank.
-* The filename(s) and "description" fields from DataStage do not appear in the metadata for DataBank, but this information is kept as "extended file attributes" within the zipped data package, which users can access via the "manifest.rdf" file in DataBank.
+* The filename(s) and "description" fields from DataStage do not appear on the surface of the data package in DataBank, but this information is kept as "extended file attributes" within the zipped data package, which users can access via the "manifest.rdf" file in DataBank.
 * The name of the research group, as used by DataStage.
 
 DataBank also assigns:
 * Created date (a timestamp given by the DataBank server, not the date the data was created)
 
-Users can specify:
-* A unique identifier for the data package: if users attempt to submit a data package with an ID which has already been taken, DataBank will require them to rename the data package, or to accept it as another "version" of the same data package. The user can decide which of these is the correct action in each case. The closer this ID is to real words, the more useful it will be to anyone searching the archive.
+Users can also specify:
+* A unique identifier for the data package: if users attempt to submit a data package with an ID which has already been taken, DataBank will require them to rename the data package, or to accept it as another "version" of the same data package. The user can decide which of these is the correct action in each case. The closer this ID is to natural language, the more useful it will be to anyone searching the archive.
 
-* Description (the description field for each file is kept alongside the file, zipped inside the data package.  Users need to add a new description for the data package as a whole).
+* Description for the data package: the description field for each file is kept alongside the file, zipped inside the data package.  Users need to add a new description for the data package as a whole.
 
-* DataBank can handle a separate field for adding license information, but the DataStage upload interface does not allow you to add this information yet. We will work on this. In the meantime, you can use the Description field to hold your license information – but this is only temporary and we would recommend you get in touch with your archive administrator if you are planning to upload real data and need to include licensing information.
+* DataBank can handle a separate field for adding license information, but the DataStage upload interface does not allow you to add this information yet. We are working on this. In the meantime, users can use the Description field to hold their license information – but this is only temporary and we would recommend you get in touch with your archive administrator if you are planning to upload real data and need to include licensing information.
