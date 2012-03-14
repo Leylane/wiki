@@ -17,7 +17,7 @@ By default, DataStage has three "areas" for files:
 * Shared: files are visible to all group members, with read-only access
 * Collaborative: files are visible to all group members, with read- and write-access
 
-Access permissions are assigned by an administrator (usually, the research group leader - multiple administrators are possible).  The administrator(s) can also enable "honorary" group membership for outside collaborators, giving them restricted permissions on the group filestore (e.g. access to "collaborative" files only).
+Access permissions are assigned by an administrator (usually, the research group leader - multiple administrators are possible).  The administrator(s) can also enable "honorary" group membership for outside collaborators, giving them limited access to the group filestore (e.g. access to "collaborative" files only).
 
 Users can connect to DataStage as a **mapped drive** (analagous to the C:\ drive on their local computer, but held on an external storage system accessible to all group members).  They can also upload, download, and annotate files using the** web interface**.
 
