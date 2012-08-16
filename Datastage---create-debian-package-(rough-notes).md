@@ -1,6 +1,8 @@
-These are contents of a couple of internal emails which are dumped here in case they're useful.
+(Work in progress)
 
-# Required packages from apt-repo.bodleian.ac.uk.uk
+# Required packages from apt-repo.bodleian.ac.uk.uk and elsewhere
+
+dataflow-datastage package depenencies
 
     python-django-conneg
     python-django-longliving
