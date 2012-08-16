@@ -1,6 +1,10 @@
 These are contents of a couple of internal emails which are dumped here in case they're useful.
 
-# Installation from existing package (?)
+# Create Debian package
+
+@@TBD
+
+# Installation from existing package (short form)
 
     ssh-keygen -t rsa -C "your_email@youremail.com"
     less /root/.ssh/id_rsa.pub 
@@ -16,7 +20,7 @@ These are contents of a couple of internal emails which are dumped here in case 
  
 Then type datastage-config (command-line admin tool)  to run the services and get started.
 
-# Create package and install (?)
+# Installation from existing package (long form)
 
     apt-get install  python-rdflib 
     apt-get install  python-lxml 
