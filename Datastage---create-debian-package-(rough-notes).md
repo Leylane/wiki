@@ -34,12 +34,12 @@
     sudo apt-get install python-django-longliving
     sudo apt-get install python-django-pam
     sudo apt-get install python-sword-client
-    sudo apt-get install python-webdav
-    sudo apt-get install python-pylibacl
     sudo apt-get install python-libmount
 
 ## From public repos
 
+    sudo apt-get install python-webdav
+    sudo apt-get install python-pylibacl
     sudo apt-get install python-rdflib
     sudo apt-get install python-lxml
     sudo apt-get install python-redis
