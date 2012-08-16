@@ -30,6 +30,8 @@
 
 ## From apt-repo.bodeian
 
+See http://apt-repo.bodleian.ox.ac.uk/ datastage link for details.
+
     sudo apt-get install python-django-conneg
     sudo apt-get install python-django-longliving
     sudo apt-get install python-django-pam
