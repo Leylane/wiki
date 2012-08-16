@@ -1,8 +1,17 @@
 These are contents of a couple of internal emails which are dumped here in case they're useful.
 
+# Required packages from apt-repo.bodleian.ac.uk.uk
+
+    ##apt-get install python-all
+
+
 # Create Debian package and install
 
-    cp -rf /mnt/hgfs/bhavana/git/DataStage/* /root/DataStage
+    apt-get install debhelper
+    apt-get install python-all
+    apt-get install python-django
+
+    ##cp -rf (git-workspace)/DataStage/* /root/DataStage
     rm -rf debian-package/
     make debian-package
     dpkg -i  debian-package/*.deb
