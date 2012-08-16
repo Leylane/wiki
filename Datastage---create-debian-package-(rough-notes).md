@@ -2,8 +2,29 @@ These are contents of a couple of internal emails which are dumped here in case 
 
 # Required packages from apt-repo.bodleian.ac.uk.uk
 
-    ##apt-get install python-all
-
+    python-django-conneg
+    python-django-longliving
+    python-django-pam
+    python-rdflib
+    python-lxml
+    python-redis
+    python-oauth2
+    python-flup
+    python-tz
+    python-libmount
+    python-sword-client
+    redis-server
+    postgresql
+    postgresql-client
+    python-psycopg2
+    python-xattr
+    python-webdav
+    apache2
+    chkconfig
+    libapache2-mod-scgi
+    pwgen
+    samba
+    python-pylibacl
 
 # Create Debian package and install
 
