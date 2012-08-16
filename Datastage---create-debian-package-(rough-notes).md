@@ -2,7 +2,14 @@ These are contents of a couple of internal emails which are dumped here in case 
 
 # Create Debian package
 
-@@TBD
+
+cp -rf /mnt/hgfs/bhavana/git/DataStage/* /root/DataStage
+rm -rf debian-package/
+make debian-package
+dpkg -i  debian-package/*.deb
+/etc/init.d/datastage stop
+/etc/init.d/datastage start
+
 
 # Installation from existing package (short form)
 
