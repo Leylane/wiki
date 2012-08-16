@@ -2,7 +2,7 @@
 
 # Required packages from apt-repo.bodleian.ac.uk.uk and elsewhere
 
-dataflow-datastage package depenencies
+## dataflow-datastage package depenencies
 
     python-django-conneg
     python-django-longliving
@@ -27,6 +27,35 @@ dataflow-datastage package depenencies
     pwgen
     samba
     python-pylibacl
+
+## From apt-repo.bodeian
+
+    sudo apt-get install python-django-conneg
+    sudo apt-get install python-django-longliving
+    sudo apt-get install python-django-pam
+    sudo apt-get install python-sword-client
+    sudo apt-get install python-webdav
+    sudo apt-get install python-pylibacl
+    sudo apt-get install python-libmount
+
+## From public repos
+
+    sudo apt-get install python-rdflib
+    sudo apt-get install python-lxml
+    sudo apt-get install python-redis
+    sudo apt-get install python-oauth2
+    sudo apt-get install python-flup
+    sudo apt-get install python-tz
+    sudo apt-get install redis-server
+    sudo apt-get install postgresql
+    sudo apt-get install postgresql-client
+    ###sudo apt-get install python-psycopg2
+    sudo apt-get install python-xattr
+    sudo apt-get install apache2
+    sudo apt-get install chkconfig
+    sudo apt-get install libapache2-mod-scgi
+    sudo apt-get install pwgen
+    sudo apt-get install samba
 
 # Create Debian package and install
 
