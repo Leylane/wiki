@@ -1,14 +1,13 @@
 These are contents of a couple of internal emails which are dumped here in case they're useful.
 
-# Create Debian package
+# Create Debian package and install
 
-
-cp -rf /mnt/hgfs/bhavana/git/DataStage/* /root/DataStage
-rm -rf debian-package/
-make debian-package
-dpkg -i  debian-package/*.deb
-/etc/init.d/datastage stop
-/etc/init.d/datastage start
+    cp -rf /mnt/hgfs/bhavana/git/DataStage/* /root/DataStage
+    rm -rf debian-package/
+    make debian-package
+    dpkg -i  debian-package/*.deb
+    /etc/init.d/datastage stop
+    /etc/init.d/datastage start
 
 
 # Installation from existing package (short form)
