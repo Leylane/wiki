@@ -46,6 +46,7 @@ Then type datastage-config (command-line admin tool)  to run the services and ge
     apt-get install  pwgen 
     apt-get install  samba 
     apt-get install  python-pylibacl 
+    pip install pywebdav
 
 
     wget http://apt-repo.bodleian.ox.ac.uk/datastage/pool/main/p/python-django-conneg/python-django-conneg_0.7.3~20120314112126_all.deb
