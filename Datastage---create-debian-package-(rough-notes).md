@@ -6,6 +6,10 @@
 
 (Using on Ubuntu 12.04 64-bit server default base install)
 
+Don't forget
+    sudo apt-get update
+    sudo apt-get upgrade
+
 Add the following packages to get going
 
 1. build-essential 
