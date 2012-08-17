@@ -61,6 +61,8 @@ See http://apt-repo.bodleian.ox.ac.uk/ datastage link for details.
     sudo apt-get install python-sword-client
     sudo apt-get install python-libmount
 
+Some of these packages are hosted at https://github.com/ox-it)
+
 ## From public repos
 
     sudo apt-get install python-webdav
