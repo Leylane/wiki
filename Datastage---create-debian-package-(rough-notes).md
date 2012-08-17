@@ -19,6 +19,9 @@ Add the following packages to get going
 4. openssh-server
 5. python-setuptools
 
+(For fixing IP addresses in VMWare Fusion environment, see http://nileshk.com/2009/06/24/vmware-fusion-nat-dhcp-and-port-forwarding.html)
+
+
 ## dataflow-datastage package depenencies
 
     python-django-conneg
