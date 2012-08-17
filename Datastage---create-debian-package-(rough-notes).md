@@ -21,6 +21,17 @@ Add the following packages to get going
 
 For fixing IP addresses in VMWare Fusion environment, see http://nileshk.com/2009/06/24/vmware-fusion-nat-dhcp-and-port-forwarding.html
 
+Add the following to ./etc/apt/sources.list:
+
+    deb http://apt-repo.bodleian.ox.ac.uk/databank/ stable main
+    deb http://apt-repo.bodleian.ox.ac.uk/datastage/ stable main
+
+then run the following commands:
+
+    wget http://apt-repo.bodleian.ox.ac.uk/datastage/dataflow.gpg
+    apt-key add dataflow.gpg
+
+
 For Databank configuration and options, see:
 * https://github.com/dataflow/RDFDatabank/blob/master/docs/DebianInstallation.txt
 * https://github.com/dataflow/RDFDatabank/blob/master/docs/Databank_VM_Installation.txt
