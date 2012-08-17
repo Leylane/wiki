@@ -15,7 +15,7 @@ Add the following packages to get going
 
 1. build-essential 
 2. linux-headers-$(uname -r)
-3. vmware-tools (from VMWare host - tried apt package, didn't work for me)
+3. vmware-tools (from VMWare host - tried apt package, didn't work for me - neither did vmware tools work: problems with driver builds)
 4. openssh-server
 5. python-setuptools
 
