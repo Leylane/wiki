@@ -19,8 +19,11 @@ Add the following packages to get going
 4. openssh-server
 5. python-setuptools
 
-(For fixing IP addresses in VMWare Fusion environment, see http://nileshk.com/2009/06/24/vmware-fusion-nat-dhcp-and-port-forwarding.html)
+For fixing IP addresses in VMWare Fusion environment, see http://nileshk.com/2009/06/24/vmware-fusion-nat-dhcp-and-port-forwarding.html
 
+For Databank configuration and options, see:
+* https://github.com/dataflow/RDFDatabank/blob/master/docs/DebianInstallation.txt
+* https://github.com/dataflow/RDFDatabank/blob/master/docs/Databank_VM_Installation.txt
 
 ## dataflow-datastage package depenencies
 
