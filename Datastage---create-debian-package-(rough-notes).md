@@ -2,6 +2,18 @@
 
 # Required packages from apt-repo.bodleian.ac.uk.uk and elsewhere
 
+## Ubuntu base system
+
+(Using on Ubuntu 12.04 64-bit server default base install)
+
+Add the following packages to get going
+
+1. build-essential 
+2. linux-headers-$(uname -r)
+3. vmware-tools (from VMWare host - tried apt package, didn't work for me)
+4. openssh-server
+5. python-setuptools
+
 ## dataflow-datastage package depenencies
 
     python-django-conneg
