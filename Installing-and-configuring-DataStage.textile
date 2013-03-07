@@ -22,10 +22,10 @@ Set up your host system (VM or ordinary Linux installation) to run **"Ubuntu 11.
 
 If you are creating a VM inside another system, set aside as much memory as you think you will need to store your files (we suggest minimum 3GB – Ubuntu installation in VMware Player doesn’t work with less than 2GB).  Store the virtual disk as a single file.  If given the choice, do download and install Linux tools as part of installation process.
 
-If you use **OSX Lion and Virtual Box**, we have some additional information on the issue tracker, **"here":http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-268](http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-2688**.
+If you use OSX Lion and Virtual Box, we have some additional information on the issue tracker, **"here":http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-268](http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-2688**.
 
 
-*Step two: Prepare to install DataStage*
+*Step two: prepare to install DataStage*
 
 When installing your operating system, if you choose the default installation settings, you can proceed as below.  Expert users can customise their installation (you will need aptitude, chkconfig, apache, pwgen, samba, python-pylibacl at minimum).
 
@@ -89,7 +89,87 @@ $ fs {to configure the file system.  You can skip this.}
 $ q {to get out of apache submenu}
 $ q {to get out of config submenu}
 
-Your DataStage website should be live!  Go check it.  Either enter the web address that you already registered, or enter the IP address directly into your web browser (e.g. http://192.35.41.12).  You can't do much with your web interface yet -- but if you can't see it at all, something has gone wrong.  You can try to trouble-shoot (check that ports 22 and 80 are open using the "ufw" command above and make sure you've started DataStage and apache by using the "datastag-config" command).  If you still have trouble, and are running this with a VM, it's probably easiest to start again from scratch: destroy this VM and create a new one, using default Ubuntu settings.
+Your DataStage website should be live!  Go check it.  Either enter the web address that you already registered, or enter the IP address directly into your web browser (e.g. http://192.35.41.12).  You can't do much with your web interface yet -- but if you can't see it at all, something has gone wrong.  You can try to trouble-shoot.
+
+Check that ports 22 and 80 are open:
+$ ufw allow ssh {this unblocks ssh through the firewall in the server - port 22}
+$ ufw allow http {this unblocks http through the firewall in the server - port 80}
+$ ufw allow samba 
+
+Make sure you've started DataStage and apache ( $ datastag-config ).  If you still have trouble, and are running this with a VM, it's probably easiest to start again from scratch: destroy this VM and create a new one, using default Ubuntu settings.
+
 
 *Step five: adding users*
 
+$ datastage-config {You can follow the instructions in the submenu, thus:}
+
+$ u {users}
+$ a {add user.  Let’s say the user’s name is Test Leader. Thus:}
+$ testlead{“Username” = short username, initials or nickname, ordinary letters and numbers and some symbol keys allowed (ASCII), no spaces}
+$ Test_Leader {“Name” = extended username, ASCII no spaces}
+$ {email address so system can send error messages to user if necessary.  Note: default Ubuntu installation assumes you have a US keyboard.  If you can’t get an @ sign, try shift + 2}
+$ l {they are the leader}
+$ y {this is correct}
+
+Let's add another user:
+
+$ a {add user.  Let’s add a user called Test Member, thus:}
+$ tmbr {group member username}
+$ TestMember {name}
+$ {email address, using shift+2 for @ symbol}
+$ m {note: collaborator status give them access to "collab" areas - no personal filespace assigned, can't access "shared."  "Collab" is the read-write area of the filestore}
+$ y {correct}
+$ q {exit this submenu}
+
+Notes: (1) Do not use your “root” server credentials for any of the group members (i.e. don’t have the same username/password for the group leader and the server administrator - this will keep your data and your server much safer). (2) If you make a mistake setting up a user, keep going: you can’t back out of the process of adding a user; you’ve got to get to the end.  You could choose “Quit” or “no” (no = go back and change the entry), in place of the “Yes this is correct” command at the end of the process.  Note: you cannot change a user's access permissions once you have created them.  You can only delete the account or change the password.
+
+To delete a user, follow the instructions on the “user” interface to remove a user.  You will see that you are given the option to “purge” the user (remove the username and the associated files), or to “remove” only the username, which will keep the files but the files will be left in limbo – you will need to reassign them to somebody else.
+
+Note: if you try to delete a user while that person is logged on via mapped drive or the web interface, it will break the web interface.  Make sure that the relevant user has genuinely logged off (using the “log off” button on the web interface) – simply closing the browser may not be enough – and they have disconnected DataStage as mapped drive. 
+
+
+*Step six: set passwords for Samba/http access*
+
+We also need to set passwords to allow the same users to access the server in different ways (e.g. for access via the web interface and the mapped drive).
+
+Use $ q as needed to get back to root command prompt, probably something like "root@ubuntu:~# "
+
+
+$ smbpasswd testlead {for the samba part – use their short username in place of testlead here}
+$ password {your password of choice – you won’t see the characters coming up on screen}
+$ password {retype}
+
+$ passwd testlead {for the system UNIX password -- use their short username in place of testlead here}
+$ password {your password of choice}
+$ password {retype}
+
+You need to repeat this process for every user, e.g. again for the "Test Member" persona:
+
+$ smbpasswd tmbr {for the samba part}
+$ password {your password of choice – you won’t see the characters coming up on screen}
+$ password {retype}
+$ passwd tmbr {for the system}
+$ password {your password of choice}
+$ password {retype}
+
+
+*Step seven: setting up a filesystem*
+
+DataStage is designed to make it easy to submit your files to a permanent archive or repository, once you are through with them.  So you must set up a default external repository for submissions, even if you do not plan to use one.
+
+Go to your DataStage web interface (either the direct IP address of the server, or wherever you have set up your web URL).
+
+Log in (button in top-right corner, using credentials with Group Leader privileges)
+
+Click on “admin” in the top-left corner (only a logged-in group leader can get in.  If you are logged in as any other sort of user, you will not be allowed to log in).  If you get stuck, go back to your DataStage homepage, click the “log out” button in the top-right corner, and log back in as a group leader.
+
+
+Repositories -> green plus button to add repo.
+
+1)	Enter a repository (use dummy info if necessary). 
+2)	Click “home” (tiny link at top left of screen) or just type your [DataStage web address]/admin/
+3)	Use “choose default repository” to tag this repository as “default”
+4)	Click save.  You will now see “default repository.”
+
+
+*****_more documentation to come... Just have to run out the door now..._*****
