@@ -1,0 +1,26 @@
+DataStage has been tested to work with the Ubuntu Linux **11.10 "Oneiric Ocelot":http://ubuntuguide.org/wiki/Ubuntu_Oneiric** and **12.04 "Precise Pangolin":http://releases.ubuntu.com/precise** operating systems, and the Virtual Machines work with **"VMWare Fusion 4.x":http://www.vmware.com/support/fusion4/doc/releasenotes_fusion_401.html**  and **"VMware Player":https://my.vmware.com/web/vmware/free**
+_note: Ubuntu 12.10 is missing key modules required by DataStage.  It may be possible to get it to work, but it's a huge hassle to track down all the missing pieces._
+
+DataStage is designed to be installed at the command line, but don't let this put you off!  These step-by-step instructions should be sufficient even if you have no Linux or command-line experience.
+
+You can run DataStage as a virtual machine (i.e. a mini-Linux system, sitting inside another computer which could be running any operating system), or on a specially dedicated Linux server.  We recommend setting up a dedicated server, but a VM is a good way to quickly test-drive the system.  Your IT department should be able to help you if you get stuck, but if you install VMware Fusion or VMware Player, you can probably follow the instructions by yourself to get it running.
+
+
+*Useful installation info* (note this information as you go along, for easy reference)
+* IP address
+* "Root" (super-administrator) username and password
+* System username and password (if different -- by default the username and password are the same as root)
+* DNS entry (web address) you wish to link to DataStage -- you will need to register a domain to do this.  Talk to your University IT support, or use a commercial web hosting company (Google will give you loads of options).
+* Usernames and passwords (note: users can change their passwords later, but the administrator setting things up for the first time will need to know the initial configuration)
+
+
+*Debian installation of DataStage (at the command line)*
+
+Set up your host system (VM or ordinary Linux installation) to run Ubuntu 11.10 or Ubuntu 12.04.  We strongly recommend using the "server" edition, because it is quicker to install, and has fewer extra components (meaning fewer security vulnerabilities).  You can use a desktop (GUI) installation though.  You will have to install DataStage via the "terminal" interface.  
+
+If you are creating a VM inside another system, set aside as much memory as you think you will need to store your files (we suggest minimum 3GB – Ubuntu installation in VMware Player doesn’t work with less than 2GB).  Store the virtual disk as a single file.  If given the choice, do download and install Linux tools as part of installation process.
+
+If you use **OSX Lion and Virtual Box**, and are installing from debian packages, we have some additional information on the issue tracker, **"here":http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-268](http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-2688**.
+
+
+
