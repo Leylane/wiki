@@ -3,7 +3,7 @@ _note: Ubuntu 12.10 is missing key modules required by DataStage.  It may be pos
 
 DataStage is designed to be installed at the command line, but don't let this put you off!  These step-by-step instructions should be sufficient even if you have no Linux or command-line experience.
 
-You can run DataStage as a virtual machine (i.e. a mini-Linux system, sitting inside another computer which could be running any operating system), or on a specially dedicated Linux server.  We recommend setting up a dedicated server, but a VM is a good way to quickly test-drive the system.  Your IT department should be able to help you if you get stuck, but if you install VMware Fusion or VMware Player, you can probably follow the instructions by yourself to get it running.
+You can run DataStage as a virtual machine (i.e. a mini-Linux system, sitting inside another computer which could be running any operating system), or on a specially dedicated Linux server.  We recommend setting up a dedicated server for continued use, but a VM is a good way to quickly test-drive the system.  Your IT department should be able to help you if you get stuck, but if you install VMware Fusion or VMware Player, you can probably follow the instructions by yourself to get it running.
 
 
 *Useful installation info* (note this information as you go along, for easy reference)
@@ -16,11 +16,80 @@ You can run DataStage as a virtual machine (i.e. a mini-Linux system, sitting in
 
 *Debian installation of DataStage (at the command line)*
 
-Set up your host system (VM or ordinary Linux installation) to run Ubuntu 11.10 or Ubuntu 12.04.  We strongly recommend using the "server" edition, because it is quicker to install, and has fewer extra components (meaning fewer security vulnerabilities).  You can use a desktop (GUI) installation though.  You will have to install DataStage via the "terminal" interface.  
+*Step one: install Linux Ubuntu*
+
+Set up your host system (VM or ordinary Linux installation) to run **"Ubuntu 11.10":http://ubuntuguide.org/wiki/Ubuntu_Oneiric** or **"Ubuntu 12.04":http://releases.ubuntu.com/precise**.  We strongly recommend using the "server" edition, because it is quicker to install, and has fewer extra components (meaning fewer security vulnerabilities).  You can use a desktop (GUI) installation though.  You will have to install DataStage via the "terminal" interface.  
 
 If you are creating a VM inside another system, set aside as much memory as you think you will need to store your files (we suggest minimum 3GB – Ubuntu installation in VMware Player doesn’t work with less than 2GB).  Store the virtual disk as a single file.  If given the choice, do download and install Linux tools as part of installation process.
 
-If you use **OSX Lion and Virtual Box**, and are installing from debian packages, we have some additional information on the issue tracker, **"here":http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-268](http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-2688**.
+If you use **OSX Lion and Virtual Box**, we have some additional information on the issue tracker, **"here":http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-268](http://dataflow-jira.bodleian.ox.ac.uk/jira/browse/DATAFLOW-2688**.
 
 
+*Step two: Prepare to install DataStage*
+
+When installing your operating system, if you choose the default installation settings, you can proceed as below.  Expert users can customise their installation (you will need aptitude, chkconfig, apache, pwgen, samba, python-pylibacl at minimum).
+
+If you have never worked at the command line before, here's how to read these instructions:
+Any line beginning with a dollar sign ("$ ") is a command.  Just type that text, verbatim, in the bottom line of whatever is visible on your screen, and press "ENTER".  Most of the time, the prompt you see on your screen will be "$ " or "# ".  Information in curly brackets {} is instructions or commentary -- do not enter this on your screen.
+
+
+Log in, using your system credentials (see above).
+$ sudo su {telling the system you want to be a "super user" and you don't want it to prompt you for your password again}
+$ ifconfig {to get your **"IP address":http://en.wikipedia.org/wiki/IP_address**.  Look for "inet addr" for the ethernet port.  It will be a string of numbers in a format like "162.65.3.12".   Note this address.}
+$ apt-get install ssh {to allow your computer to communicate with other computers via **"SSH":http://en.wikipedia.org/wiki/Secure_Shell** protocol}
+$ Y {continue}
+
+Once your system is up,and IP address recorded, you can use a tool like **"PuTTY":http://www.chiark.greenend.org.uk/~sgtatham/putty/** to administer your server from another computer.  E.g. you could start your server at work, and finish installing the software from home.  To do this, you should connect to your server via SSH, through port 22.  Or just carry on with these instructions, directly at the command line of your server.  Note: if you do suspend or turn off your server partway through the installation process, SSH may stop working.  to fix this:
+
+$ start ssh
+
+And check the firewall isn't blocking port 22:
+
+$ iptables --list {look at the line with “Chain ufw-user-limit-accept…ACCEPT …” (and it will tell you if anything is blocked.}  
+
+To fix this:
+
+$ ufw enable {to turn on the uncomplicated firewall interface}
+$ allow 22 {to enable port 22 -- you can use this command with different numbers, to turn on whichever ports you require}
+$ service iptables start {to start up your firewall with the new settings}
+
+
+*Step three: install DataStage*
+
+$ sudo su {if you're not already in super-user mode}
+$ nano /etc/apt/sources.list {You are now editing the apt repository to include the DataStage download.  Scroll to the bottom, then get software from our repository: **http://apt-repo.bodleian.ox.ac.uk/datastage/**.  At the very bottom of the screen, type the following, paying attention to include the spaces:
+
+    deb http://apt-repo.bodleian.ox.ac.uk/datastage/ stable main
+
+You could choose to edit "stable" to "unstable", i.e. deb http://apt-repo.bodleian.ox.ac.uk/datastage/ unstable main.
+
+Now press ctrl + x}
+
+$ Y {yes, do it}
+$ "Enter" {accept default filename}
+
+ > wget http://apt-repo.bodleian.ox.ac.uk/datastage/dataflow.gpg
+ > apt-key add dataflow.gpg
+ > aptitude update {this might take awhile – there is a lot to update}
+ > aptitude install dataflow-datastage
+ > Y {continue}
+
+This will take some time: a lot of stuff will scroll by. Eventually, you will see your command prompt (probably something like: “root@ubuntu:~#“) again.  Now it's installed - DataStage is now a command available from anywhere in the system.
+
+
+*Step four: start DataStage*
+
+$ datastage-config {to get to the configuration menu}
+$ c {to get into the configuration submenu}	
+$ a {to start apache2… now read the readout that the system gives you – see if you can follow the instructions in purple text. For example:}
+$ da {to start datastage}
+$ d {defaultsite: restarts apache and removes pre-existing configurations}
+$ c {confsamba: if you want make any changes to the samba configuration base file, you need to restart samba. We'll skip this for now}
+$ fs {to configure the file system.  You can skip this.}
+$ q {to get out of apache submenu}
+$ q {to get out of config submenu}
+
+Your DataStage website should be live!  Go check it.  Either enter the web address that you already registered, or enter the IP address directly into your web browser (e.g. http://192.35.41.12).  You can't do much with your web interface yet -- but if you can't see it at all, something has gone wrong.  You can try to trouble-shoot (check that ports 22 and 80 are open using the "ufw" command above and make sure you've started DataStage and apache by using the "datastag-config" command).  If you still have trouble, and are running this with a VM, it's probably easiest to start again from scratch: destroy this VM and create a new one, using default Ubuntu settings.
+
+*Step five: adding users*
 
