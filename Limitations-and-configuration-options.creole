@@ -5,7 +5,7 @@ The administrator can set:
 * permissions for users (e.g. access to "shared" and "collaborative" areas of DataStage) 
 * target repository for files that users wish to keep in the long term (e.g. DataBank: http://www.dataflow.ox.ac.uk/index.php/databank/db-about)
 
-There may also be firewall considerations – these may work in favour of your group (additional security preventing unauthorised access) or against you (preventing access by people outside your institution, when you would like to make a file publicly accessible).
+There may also be firewall considerations – these may work in favour of your group (additional security preventing unauthorised access) or against you (preventing access by people outside your institution, when you would like to make a file publicly accessible).  See the wiki pages on [[https://github.com/dataflow/DataStage/wiki/Installing-and-configuring-DataStage|Installing and Configuring DataStage]] and [[https://github.com/dataflow/DataStage/wiki/Using-DataStage-via-web-interface-and-mapped-drive|Using DataStage ia web interface and mapped drive]] for further information.
 
 
 **Long-term storage**
