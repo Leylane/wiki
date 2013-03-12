@@ -1,6 +1,8 @@
 # Using the web interface
 
 ### Web interface
+_Note: the web interface can't deal with directories ("folders") or files with spaces [ ] in the title.  Any files with spaces in the title will be safely saved, and are accessible from the other interfaces; better to avoid spaces in your file and directory names._
+
 Navigating the interface:
 We hope you can do this without instructions.  Just in case, here's how to upload files and add some metadata.
 
@@ -82,3 +84,42 @@ That should be it -- talk to your IT support team if it doesn't work.
 
 
 **An alternative for those not sharing a wired network**
+
+If you have to work off-site, or wireless access won't let you use samba, you can use SFTP over port 22.  You will probably have to install an extra client: [WinSCP](http://winscp.net/eng/index.php) for Windows, or [Cyberduck](http://cyberduck.ch/) for Mac.
+
+It’s not quite as nice as a samba connection, but a lot easier that navigating the web interface.
+
+For WinSCP (sorry -- haven't done instructions for Mac.  The process should be similar though.)
+
+1. Download and install WinSCP
+2. Launch WinSCP
+3. Set new connection:
+
+Host name: {the root of your web address, e.g. dataflow.ox.ac.uk.  No slashes, no http}
+Port: 22
+User name: {short username}
+Password: {your password}
+Private key file: (leave blank)
+File protocol: SFTP
+
+Pick a colour if you like. It will become the background of your session (useful if you want to set up multiple SFTP connections to DataStage or other servers).  Default is white.
+
+Click Login
+
+If you get a pop-up box with something about the key not being recognised, say “yes” – OK to proceed.
+
+4. You should see a location on your local computer on the left, and /srv/datastage/private/{username} on the right-hand side (your “private” area on the server).
+
+5. On the right-hand side, navigate to your preferred location (if you want to generally work in another location, eg the "Collab" area, navigate there.  E.g. /srv/datastage/collab/{username}
+
+6. On the left-hand side, navigate to wherever you keep relevant files on your home system.
+
+7. From the “Session” drop-down menu at the top, click “save session.”  Give it a name that makes sense to you (e.g. “groupname_datastage”).
+
+8. WinSCP will remember this setup.  Next time you turn on WinSCP, you can go straight to this location without spending time navigating between areas.
+
+_Note: this approach lets you see a lot more of the "back end" of the data server.  User permissions will prevent unauthorised users from seeing other users' "private" files or accidentally changing system files, but this could give malicious users information about the structure of your system, which may lead to security vulnerabilities._
+
+_We recommend adding extra security: you could install [Denyhosts](http://denyhosts.sourceforge.net/) on the server, which can blacklist any IP address unsuccessfully trying to connect more than (x) times._
+
+9. There are some synchronise/update options just under the drop-down menu (little icons, just hover your mouse over them to see what they do).   You can use this if you like – but please be very careful how you set this up, so you don’t inadvertently roll back changes that others have made on shared/collab areas of the filestore.
