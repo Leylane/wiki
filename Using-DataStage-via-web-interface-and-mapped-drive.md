@@ -1,4 +1,4 @@
-*Using the web interface*
+**Using the web interface**
 
 Navigating the interface:
 We hope you can do this without instructions.  Just in case, here's how to upload files and add some metadata.
@@ -20,7 +20,7 @@ Notes:
 
 When editing the file's metadata (title and description fields): depending on your browser configuration, you may see a button saying "update metadata." If so, you must click this in order for your changes to be kept.  If you do not see this button, then simply clicking your mouse somewhere outside the text box (or pressing the "tab" key) should save your changes.  There is currently a bug related to JavaScript, which can cause the web interface to act strangely.  If you notice that the "title" and "description" fields are not editable, or the changes you make do not seem to stick, this is a JavaScript issue.  Some browsers (especially Internet Explorer) have trouble, while others (Firefox, Chrome) usually work fine.  You can still edit these fields if you turn off JavaScript in your browser, but this may have knock-on consequences for other websites which require JavaScript to be turned on.
 
-*Connect to a repository, to enable submissions*
+**Connect to a repository, to enable submissions**
 You can connect to your own instance of DataBank, or to other SWORD-compliant repositories.  Here is how to set it up to connect your DataStage to the “demo” instance of DataBank, running on a VM in the Oxford e-Research Centre.
 {note: this can be browsed by the general public, and we routinely delete files to make space.  Don’t put anything important here!}
 
@@ -31,7 +31,7 @@ Authentication: Basic Authentication
 {leave the rest blank}
 {save}
 
-*Submit some data to the repository*
+**Submit some data to the repository**
 
 In your browser bar, go back to your home DataStage page.
 For submission:
