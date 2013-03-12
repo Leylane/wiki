@@ -1,4 +1,4 @@
-**Using the web interface**
+# Using the web interface
 
 Navigating the interface:
 We hope you can do this without instructions.  Just in case, here's how to upload files and add some metadata.
