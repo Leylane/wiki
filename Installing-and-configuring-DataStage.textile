@@ -246,15 +246,16 @@ _This is mostly for experts -- but a novice user can easily change the "DataStag
 
 A quick-and-dirty method to re-name your front page:
 $ nano /usr/share/pyshared/datastage/web/core/templates/base.html 
-look for a line like this (note: I've added extra spaces because otherwise the lines below mixed up the editor system for this wiki.  Just keep whatever formatting you see on your server interface):
-< title>{% block title %}{% endblock %} | {{ settings.SITE_NAME }}</title >
-just delete/overtype this, so it reads < title>*YourWebsiteNameNoSpaces*</title > 
+
+Look for a line like this (note: I've added extra spaces because otherwise the lines below mixed up the editor system for this wiki.  Just keep whatever formatting you see on your server interface):
+
+< title>{% block title %}{% endblock %} | {{ settings.SITE_NAME }}< /title>
+just delete/overtype this, so it reads < title>*YourWebsiteNameNoSpaces*< /title> 
 
 Look lower, for the line:
-< a href=”{% url core:index %>{{ settings.SITE_NAME }}</a > 
+< a href=”{% url core:index %>{{ settings.SITE_NAME }}< /a> 
 
-And replace it with < a href=”{% url core:index %>*YourWebsiteNameNoSpaces*</a >  and it worked!)
-
+And replace it with < a href=”{% url core:index %>*YourWebsiteNameNoSpaces*< /a >  and it worked!)
 
 For pros:
 The web interface has been written in a "Django":https://www.djangoproject.com/ framework.
@@ -270,6 +271,7 @@ Configuration file
 
 /etc/apache2/sites-available/datastage.conf
 /etc/apache2/sites-enabled/datastage.conf – any changes must be reflected here (when Apache needs access)
+
 
 
 *Good luck!*
