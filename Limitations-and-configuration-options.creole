@@ -18,8 +18,8 @@ However – no matter what may happen to the DatStage software itself, so long a
 
 **User configurations**
 
-The system is optimised for research groups where most members work mostly independently, or where individual contributions to group goals are obvious.  All "shared" and "collaborative" items are filed under the owner's name, rather than in some communal pool.
+The system is optimised for research groups where most members work mostly independently, or where individual contributions to group goals are well established.  So all "shared" and "collaborative" items are filed under the owner's name, rather than in some communal pool.
 
-If you work in a highly collaborative team (where it might be difficult to remember who "owns" a particular file), you could create another "user" called something like "PROJECT," and instruct group members to save files to the "collab" area of the "PROJECT" user.  Then all files will be in one place, but will still be owned by the individuals who submit these files -- making it clear who has uploaded what.  You could also give group members individual credentials, plus the "PROJECT" credentials, so they can choose which identity to assume when adding files to your file-store.
+If you work in a highly collaborative team (where it might be difficult to remember who "owns" a particular file), you could create another user, called something like "PROJECT," and instruct group members to save files to the "collab" area of the "PROJECT" user.  Then all files will be in one place, but will still be owned by the individuals who submit these files -- making it clear who has uploaded what.  You could also give group members individual credentials, plus the "PROJECT" credentials, so they can choose which identity to assume when adding files to your file-store.
 
 //Note: the lack of a collective pool of documents was due to a limitation in Ubuntu's file permissions at an early stage of our software development.  It may be possible to make a collective pool now, but we haven't tried it.  If you get it working, let us know, and/or contribute to the code! katherine.fletcher@cs.ox.ac.uk//
