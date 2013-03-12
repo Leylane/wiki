@@ -94,9 +94,11 @@ Your DataStage website should be live!  Go check it.  Either enter the web addre
 Check that ports 22 and 80 are open:
 $ ufw allow ssh {this unblocks ssh through the firewall in the server - port 22}
 $ ufw allow http {this unblocks http through the firewall in the server - port 80}
-$ ufw allow samba 
+$ ufw allow samba {this unblocks samba through the firewall in the serer - ports 137, 138, 139 and I think a couple of others}
 
 Make sure you've started DataStage and apache ( $ datastag-config ).  If you still have trouble, and are running this with a VM, it's probably easiest to start again from scratch: destroy this VM and create a new one, using default Ubuntu settings.
+
+Note:  I have found that using VPN software can sometimes (but not always…) mess up my connection to the server (even when my computer is only talking to its own virtual machine).
 
 
 *Step five: adding users*
@@ -127,6 +129,7 @@ To delete a user, follow the instructions on the “user” interface to remove 
 
 Note: if you try to delete a user while that person is logged on via mapped drive or the web interface, it will break the web interface.  Make sure that the relevant user has genuinely logged off (using the “log off” button on the web interface) – simply closing the browser may not be enough – and they have disconnected DataStage as mapped drive. 
 
+I have also found that if I make changes to the server, although the web interface continues to “seem” to behave normally, the changes aren’t always reflected in the web interface (e.g.  if I add a user, the new user isn’t able to log into the site).  If this happens, just close and re-open your browser and start again.
 
 *Step six: set passwords for Samba/http access*
 
@@ -152,7 +155,6 @@ $ passwd tmbr {for the system}
 $ password {your password of choice}
 $ password {retype}
 
-
 *Step seven: setting up a filesystem*
 
 DataStage is designed to make it easy to submit your files to a permanent archive or repository, once you are through with them.  So you must set up a default external repository for submissions, even if you do not plan to use one.
@@ -172,4 +174,107 @@ Repositories -> green plus button to add repo.
 4)	Click save.  You will now see “default repository.”
 
 
-*****_more documentation to come... Just have to run out the door now..._*****
+*Step eight: using the web interface*
+
+Navigating the interface:
+We hope you can do this without instructions.  Just in case, here's how to upload files and add some metadata.
+
+# Use the "browse data" options (inside the box on the left-hand side) to navigate to your target folder.
+# Click "upload file" (at the top of the screen)
+# Depending on your browser's settings, the details of this step will vary, but you will probably see a pop-up box asking you to browse for a file on your local computer, which you wish to upload to the website.  Select the file and click "upload."
+   * Uploading a single file is straightforward: the file will appear on the screen you are currently viewing in your web interface.  You can now edit the "title" and "description" metadata options to add more information if you like. (note: only the "owner" of a file -- which is the person who originally uploaded -- can edit these fields.  Even in the "Collab" directory, and even if you are the Group Leader, you can't edit somebody else's title and description ("metadata")).
+   * You can upload whole directories ("folders").  You must first turn the target directory into a .zip file on your local computer.  When you upload a zipped directory, DataStage will automatically unzip it, and unpack the contents -- if you zipped a series of nested folders into one .zip file, DataStage will create that same filetree.  Note: If your zipped folder contains only folders (with whatever content within), no problem.  If it contains only standalone files (of any type), no problem.  However, if there is a mixture of both directories and standalone files, it won't work.  sorry.).
+   * Note: If you use subdirectories (e.g. in the "Collab" area), only the owner of the top-most directory can use the web interface to upload further files within that branch of the file structure.  However, other users can upload sub-files or sub-directories via the mapped drive interface (see below) -- and they ill "own" those sub-files, so can edit their own metadata.
+# The “Permissions” file reminds you which permissions go with that particular user and folder.  We recommend you not delete this – it might be a useful reference for you (or other users) in future.  Deleting the file won't harm anything though.
+# To delete a file, press "delete" (only the owner of a file may delete it via the web interface -- although if the file is in the "collab" area, other users may delete it using the mapped drive interface). Deleting a file via the web interface seems to have a bug -- file names remain in the list on the web interface, even though they are no longer accessible.  Deleting files via the mapped drive interface does not suffer from this problem -- everything functions as you would expect it should.
+
+Notes:
+
+When editing the file's metadata (title and description fields): depending on your browser configuration, you may see a button saying "update metadata." If so, you must click this in order for your changes to be kept.  If you do not see this button, then simply clicking your mouse somewhere outside the text box (or pressing the "tab" key) should save your changes.  There is currently a bug related to JavaScript, which can cause the web interface to act strangely.  If you notice that the "title" and "description" fields are not editable, or the changes you make do not seem to stick, this is a JavaScript issue.  Some browsers (especially Internet Explorer) have trouble, while others (Firefox, Chrome) usually work fine.  You can still edit these fields if you turn off JavaScript in your browser, but this may have knock-on consequences for other websites which require JavaScript to be turned on.
+
+*Step nine: connect to a repository, to enable submissions*
+You can connect to your own instance of DataBank, or to other SWORD-compliant repositories.  Here is how to set it up to connect your DataStage to the “demo” instance of DataBank, running on a VM in the Oxford e-Research Centre.
+{note: this can be browsed by the general public, and we routinely delete files to make space.  Don’t put anything important here!}
+
+Name: DataBank {call it what you like}
+Type: DataBank {user choice, but easiest to call it DataBank for clarity}
+Homepage: http://databank-vm1.oerc.ox.ac.uk/sandbox/ {with the final slash}
+Authentication: Basic Authentication
+{leave the rest blank}
+{save}
+
+*Step ten: submit some data to the repository*
+
+In your browser bar, go back to your home DataStage page.
+For submission:
+
+Navigate into your target folder/subfile
+Click "submit"
+Repository: DataBank {or whatever you've set up}
+Identifier: {the name that DataStage and DataBank will internally use to talk about this datapackage. keep it compact.}
+Title: {title visible to people browsing in DataBank.  Make it human-readable}
+
+DataBank demo system credentials:
+Username: admin
+Password: test
+
+
+*Other information*
+
+To turn off /restart your server:
+$ sudo halt {if you’re using a virtual machine, power off the VM after the halt is complete}
+ - or -
+$ sudo reboot {to restart your server - use this if you're administering your server remotely -- if you just turn it off, you can't use your remote computer to turn it back on again!}
+
+You will need to re-start DataStage once your machine has restarted:
+$ {log in using your admin credentials}
+$ sudo datastage-config
+$ d {to start DataStage}
+
+Go to your web interface to check it has worked -- the DataStage homepage should appear pretty much instantly if everything has worked correctly.
+
+To delete and remove DataStage installation (e.g. to reinstall it from scratch)
+_note: I'm not sure this is removing everything... but it seems to work OK_
+
+$ sudo apt-get --purge remove dataflow-datastage {to remove the main installation}
+$ rm *.gpg* {to remove the underlying .gpg installation file stored in your system, so when you try to install the new version, you pull the latest version from the repository}
+
+This should leave your (samba and UNIX) usernames and passwords from the last time around, and I'm pretty sure it leaves the filetree intact -- but I haven't thoroughly tested this.  Let me know how you get on! katherine.fletcher@cs.ox.ac.uk
+
+To change the look of your website
+_This is mostly for experts -- but a novice user can easily change the "DataStage" label on the front page, e.g. to have it read the name of your research group instead._
+
+A quick-and-dirty method to re-name your front page:
+$ nano /usr/share/pyshared/datastage/web/core/templates/base.html 
+look for the line:
+<title>{% block title %}{% endblock %} | {{ settings.SITE_NAME }}</title>
+just delete/overtype this, so it reads <title>*YourWebsiteNameNoSpaces*</title> 
+
+Look lower, for the line:
+<a href=”{% url core:index %>{{ settings.SITE_NAME }}</a> 
+
+And replace it with <a href=”{% url core:index %>*YourWebsiteNameNoSpaces*</a>  and it worked!)
+
+
+For pros:
+The web interface has been written in a "Django":https://www.djangoproject.com/ framework.
+
+To change the webpage display, the filepath is: /usr/share/pyshared/datastage/web/
+File: /usr/share/pyshared/datastage/web/core/templates/base.html
+
+The name in the website header (currently set to “DATASTAGE”) isn’t hardcoded, it’s picked up from python.  To change any of these settings, the developers say to adjust this file, but I (a non-developer) can't figure out what to do: 
+nano /usr/share/pyshared/datastage/web/settings.py
+
+Configuration file
+/usr/share/dataflow-datastage/conf/datastage.conf – configuration file with key value pairs, picked up by website templates (when Python needs access)
+
+/etc/apache2/sites-available/datastage.conf
+/etc/apache2/sites-enabled/datastage.conf – any changes must be reflected here (when Apache needs access)
+
+
+*Good luck!*
+Updates and changes to this wiki are welcome.  katherine.fletcher@cs.ox.ac.uk
+
+
+
+
