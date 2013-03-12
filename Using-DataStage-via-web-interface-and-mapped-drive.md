@@ -1,5 +1,6 @@
 # Using the web interface
 
+### Web interface
 Navigating the interface:
 We hope you can do this without instructions.  Just in case, here's how to upload files and add some metadata.
 
@@ -46,4 +47,38 @@ DataBank demo system credentials:
 Username: admin
 Password: test
 
-**Using a mapped drive**
+### Other ways to connect: mapped drives (samba) and SFTP
+
+**Mapped drive**
+You can map a connection straight to the data server, which will give you direct access to the files.  This uses a protocol called samba -- it is fantastic for local networks where everybody is using wired connections (using ethernet cables).  But samba is not very secure, and for that reason, most internet service providers (including Eduroam, and Virgin Media) block the ports required to do this -- even if your laptop and the server are set up to enable samba, your wireless internet provider will probably stand in your way.  VPN may help you get around this but it is not reliable.  (don't worry -- there's another solution below).
+
+For Windows users: 
+
+Go to Start -> Computer
+Maximise that window
+Click "map network drive"
+
+For Mac OS users:
+From the Mac OS X Finder, hit Command+K to bring up the ‘Connect to Server’ window
+Enter the path to the network drive you want to map, (see below) and click ‘Connect’
+The drive is now mounted.  Now go to System Preferences, from the Apple menu
+Click on ‘Accounts’
+Click on “Login Items”
+Click on the + button to add another login item
+Locate the network drive you just mounted and click “Add”
+Exit System Preferences.  Your mapped drive will now reconnect automatically when you start your computer.
+
+
+Mapped drive path: 
+\\{your server's ip address}\datastage  For example, \\192.135.34.5\datastage 
+
+_or if you have set up an outward-facing server, use your url, as follows:_
+
+\\{your url}\datastage  For example, \\www.daflow.ox.ac.uk\datastage
+
+Then enter your user credentials (short username and password).
+
+That should be it -- talk to your IT support team if it doesn't work.
+
+
+**An alternative for those not sharing a wired network**
