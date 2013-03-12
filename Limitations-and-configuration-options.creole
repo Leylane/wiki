@@ -12,6 +12,14 @@ There may also be firewall considerations – these may work in favour of your g
 
 We cannot guarantee to preserve your data. We provide software which is as robust as we can make it, but we cannot take responsibility for the hardware you install it on, or how you configure it.
 
-Software development will carry on after the end of the DataFlow project (www.dataflow.ox.ac.uk) in May 2012. The Bodleian Library at the University of Oxford has decided to trial DataStage for its own use, and will continue open-source development practices, so users can expect bug fixes and security patches until at least May 2013 (and hopefully beyond).
+Software development will carry on after the end of the DataFlow project (www.dataflow.ox.ac.uk) (ongoing as of March 2013). The Bodleian Library at the University of Oxford has decided to trial DataStage for its own use, and will continue open-source development practices, so users can expect bug fixes and security patches until at least May 2013 (and hopefully beyond).
 
 However – no matter what may happen to the DatStage software itself, so long as you have root access to the machine holding your data, you can always get your files back. So long as you maintain that machine, your data will be on it.
+
+**User configurations**
+
+The system is optimised for research groups where most members work mostly independently, or where individual contributions to group goals are obvious.  All "shared" and "collaborative" items are filed under the owner's name, rather than in some communal pool.
+
+If you work in a highly collaborative team (where it might be difficult to remember who "owns" a particular file), you could create another "user" called something like "PROJECT," and instruct group members to save files to the "collab" area of the "PROJECT" user.  Then all files will be in one place, but will still be owned by the individuals who submit these files -- making it clear who has uploaded what.  You could also give group members individual credentials, plus the "PROJECT" credentials, so they can choose which identity to assume when adding files to your file-store.
+
+//Note: the lack of a collective pool of documents was due to a limitation in Ubuntu's file permissions at an early stage of our software development.  It may be possible to make a collective pool now, but we haven't tried it.  If you get it working, let us know, and/or contribute to the code! katherine.fletcher@cs.ox.ac.uk//
