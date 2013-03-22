@@ -96,7 +96,7 @@ $ ufw allow ssh {this unblocks ssh through the firewall in the server - port 22}
 $ ufw allow http {this unblocks http through the firewall in the server - port 80}
 $ ufw allow samba {this unblocks samba through the firewall in the serer - ports 137, 138, 139 and I think a couple of others}
 
-Make sure you've started DataStage and apache ( $ datastag-config ).  If you still have trouble, and are running this with a VM, it's probably easiest to start again from scratch: destroy this VM and create a new one, using default Ubuntu settings.
+Make sure you've started DataStage and apache ( $ datastag-config ), and started "defaultsite" within the config submenu.  If you still have trouble, and are running this with a VM, it's probably easiest to start again from scratch: destroy this VM and create a new one, using default Ubuntu settings.
 
 Note:  I have found that using VPN software can sometimes (but not always…) mess up my connection to the server (even when my computer is only talking to its own virtual machine).
 
