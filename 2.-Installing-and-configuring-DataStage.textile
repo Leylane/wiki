@@ -63,7 +63,7 @@ $ nano /etc/apt/sources.list {You are now editing the apt repository to include 
 
 You could choose to edit "stable" to "unstable", i.e. deb http://apt-repo.bodleian.ox.ac.uk/datastage/ unstable main.
 
-Now press ctrl + x}
+Now press ctrl + x
 
 $ Y {yes, do it}
 $ "Enter" {accept default filename}
