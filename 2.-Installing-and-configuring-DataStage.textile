@@ -68,11 +68,11 @@ Now press ctrl + x}
 $ Y {yes, do it}
 $ "Enter" {accept default filename}
 
- > wget http://apt-repo.bodleian.ox.ac.uk/datastage/dataflow.gpg
- > apt-key add dataflow.gpg
- > aptitude update {this might take awhile – there is a lot to update}
- > aptitude install dataflow-datastage
- > Y {continue}
+$ wget http://apt-repo.bodleian.ox.ac.uk/datastage/dataflow.gpg
+$ apt-key add dataflow.gpg
+$ aptitude update {this might take awhile – there is a lot to update}
+$ aptitude install dataflow-datastage
+$ Y {continue}
 
 This will take some time: a lot of stuff will scroll by. Eventually, you will see your command prompt (probably something like: “root@ubuntu:~#“) again.  Now it's installed - DataStage is now a command available from anywhere in the system.
 
